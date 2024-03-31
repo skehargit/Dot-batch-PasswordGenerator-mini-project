@@ -10,16 +10,15 @@
         *{
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-        .container{
+        .hero{
             background-image: linear-gradient(0deg, rgb(82, 82, 82),rgb(99, 99, 99)),linear-gradient(45deg, rgb(12, 3, 124) 0%, rgb(12, 3, 124) 63%,rgb(16, 35, 140) 63%, rgb(16, 35, 140) 68%,rgb(19, 67, 156) 68%, rgb(19, 67, 156) 77%,rgb(23, 100, 171) 77%, rgb(23, 100, 171) 86%,rgb(26, 132, 187) 86%, rgb(26, 132, 187) 92%,rgb(30, 164, 203) 92%, rgb(30, 164, 203) 100%),linear-gradient(135deg, rgb(12, 3, 124) 0%, rgb(12, 3, 124) 63%,rgb(16, 35, 140) 63%, rgb(16, 35, 140) 68%,rgb(19, 67, 156) 68%, rgb(19, 67, 156) 77%,rgb(23, 100, 171) 77%, rgb(23, 100, 171) 86%,rgb(26, 132, 187) 86%, rgb(26, 132, 187) 92%,rgb(30, 164, 203) 92%, rgb(30, 164, 203) 100%); background-blend-mode:overlay,overlay,normal;
         }
     </style>
 </head>
-<body>
+<body >
     
-    <div class="container bg-[#01005c] h-screen w-full flex flex-col items-center justify-center">
+    <div class="hero w-full h-screen  flex flex-col items-center justify-center">
 
         <h1 class="text-white font-semibold text-2xl border border-zinc-100/20 w-[500px] max-[500px]:w-[300px] text-center py-2">Password Generator</h1>
 
@@ -47,23 +46,23 @@
             <input  type="range" min="4" max="20" class="slider w-full " step="1" data-lengthSlider>
 
             <!-- checkboxes-->
-            <div class="allcheckbox flex items-center py-2 justify-between">
-                <div>
+            <div class="allcheckbox grid grid-cols-4 max-[500px]:grid-cols-2 py-2 ">
+                <div class="flex gap-1">
                     <input type="checkbox" id="uppercase" checked >
                     <label for="uppercase">UPPERCASE</label>
                 </div>
     
-                <div>
+                <div class="flex gap-1">
                     <input type="checkbox" id="lowercase" checked>
                     <label for="lowercase">LOWERCASE</label>
                 </div>
     
-                <div>
+                <div class="flex gap-1">
                     <input type="checkbox" id="numbers" checked>
                     <label for="numbers">NUMBERS</label>
                 </div>
     
-                <div>
+                <div class="flex gap-1">
                     <input type="checkbox" id="symbols" checked>
                     <label for="symbols">SYMBOLS</label>
                 </div>

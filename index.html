@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Rendom Password Generator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            background-image: linear-gradient(0deg, rgb(82, 82, 82),rgb(99, 99, 99)),linear-gradient(45deg, rgb(12, 3, 124) 0%, rgb(12, 3, 124) 63%,rgb(16, 35, 140) 63%, rgb(16, 35, 140) 68%,rgb(19, 67, 156) 68%, rgb(19, 67, 156) 77%,rgb(23, 100, 171) 77%, rgb(23, 100, 171) 86%,rgb(26, 132, 187) 86%, rgb(26, 132, 187) 92%,rgb(30, 164, 203) 92%, rgb(30, 164, 203) 100%),linear-gradient(135deg, rgb(12, 3, 124) 0%, rgb(12, 3, 124) 63%,rgb(16, 35, 140) 63%, rgb(16, 35, 140) 68%,rgb(19, 67, 156) 68%, rgb(19, 67, 156) 77%,rgb(23, 100, 171) 77%, rgb(23, 100, 171) 86%,rgb(26, 132, 187) 86%, rgb(26, 132, 187) 92%,rgb(30, 164, 203) 92%, rgb(30, 164, 203) 100%); background-blend-mode:overlay,overlay,normal;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container bg-[#01005c] h-screen w-full flex flex-col items-center justify-center">
+
+        <h1 class="text-white font-semibold text-2xl border border-zinc-100/20 w-[500px] max-[500px]:w-[300px] text-center py-2">Password Generator</h1>
+
+        
+
+
+        <div class="input-container border border-zinc-100/20  backdrop-blur text-white max-[500px]:w-[300px] w-[500px] p-10 relative">
+            <div class="display-container border border-zinc-100/20 flex p-2 backdrop-blur ">
+
+                <input readonly placeholder="Password" class="display text-white font-semibold h-full w-full bg-transparent outline-none" data-passwordDisplay>
+    
+                <button data-copy class="relative">
+                    <span data-copyMsg class="absolute bg-[#0341cc] px-2  absolute top-[-35px] left-[-20px] rounded-2xl hidden duration-300"></span>
+                    <img src="./assets/copy.svg" alt="copy" width="23" height="23">
+                </button>
+    
+            </div>
+            <!--password length section-->
+            <div class="length-container flex w-full justify-between py-2 font-semibold">
+                <p>Password Length</p>
+                <p data-lengthNumber>0</p>
+            </div>
+            
+            <!--slider-->
+            <input  type="range" min="4" max="20" class="slider w-full " step="1" data-lengthSlider>
+
+            <!-- checkboxes-->
+            <div class="allcheckbox flex items-center py-2 justify-between">
+                <div>
+                    <input type="checkbox" id="uppercase" checked >
+                    <label for="uppercase">UPPERCASE</label>
+                </div>
+    
+                <div>
+                    <input type="checkbox" id="lowercase" checked>
+                    <label for="lowercase">LOWERCASE</label>
+                </div>
+    
+                <div>
+                    <input type="checkbox" id="numbers" checked>
+                    <label for="numbers">NUMBERS</label>
+                </div>
+    
+                <div>
+                    <input type="checkbox" id="symbols" checked>
+                    <label for="symbols">SYMBOLS</label>
+                </div>
+            </div>
+            
+
+            <!-- strength section-->
+            <div class="strength-container flex py-2 items-center justify-between w-full">
+                <p class="strength">Strength</p>
+                <div data-indicator class="h-[10px] w-[10px] bg-white rounded-full"></div>
+            </div>
+
+            <!-- generate password-->
+            <button class="generateButton border border-zinc-100/20 w-full p-2 backdrop-blur">Generate Password</button>
+
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
